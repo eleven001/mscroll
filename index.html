@@ -57,8 +57,14 @@
         start: function () {
           console.info('start');
         },
-
+        onRefresh: function () {
+          setTimeout(() => {
+            debugger;
+            this.backTop();
+          }, 2000);
+        }
       });
+
     </script>
   </body>
 </html>
