@@ -1,0 +1,1 @@
+window.nScroll = require('./dist/refresh.js');
