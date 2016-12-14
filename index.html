@@ -53,13 +53,13 @@
       var Pull = nScroll.default;
       var refresh = new Pull ('body', {
         MsgElement: '.msgwrap',
-        msgs: ['释放刷新.....', '下拉刷新'],
+        msgs: ['下拉刷新.....', '释放刷新'],
+        distance: 10,
         start: function () {
           console.info('start');
         },
         onRefresh: function () {
-          setTimeout(() => {
-            debugger;
+          setTimeout(() => {            
             this.backTop();
           }, 2000);
         }
