@@ -12,7 +12,12 @@
     <style type="text/css">
       body {
         height: 100%;
-        width: 100%;
+        width: 100%;       
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
       .msgwrap {
         color: #ccc;
@@ -22,7 +27,8 @@
         transform: translate3d(0, 0px, 0); 
       }
       .contentwrap {
-        height: 200px;
+        height: 100%;
+        overflow: scroll;
         text-align: center;
       }
       ul {
@@ -46,11 +52,52 @@
         <li>我是内容6</li>
         <li>我是内容7</li>
         <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
       </ul>
     </div>
     <script type="text/javascript" src="./bundle.js"></script>
     <script type="text/javascript">    
-      var Pull = nScroll.default;
+      var Pull = nScroll.pull;
+      var More = nScroll.more;
       var refresh = new Pull ('body', {
         MsgElement: '.msgwrap',
         msgs: ['下拉刷新.....', '释放刷新'],
@@ -71,7 +118,14 @@
           }, 2000);
         }
       });
-
+      
+      var load = new More ('.contentwrap', {
+        more: function () {
+          main: '.contentwrap'
+          console.info('load more');
+        }
+      });
+      load.start();
     </script>
   </body>
 </html>

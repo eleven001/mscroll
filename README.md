@@ -5,4 +5,4 @@
 #使用方法
 1. npm run build
 
-1. browserify index.js --deubg > bundle.js
+1. browserify nscroll.js --deubg > bundle.js
