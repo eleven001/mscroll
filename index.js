@@ -1,1 +1,1 @@
-window.nScroll = require('./dist/refresh.js');
+window.nScroll = require('./dist/pull.js');

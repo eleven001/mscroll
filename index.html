@@ -58,7 +58,14 @@
         start: function () {
           console.info('start');
         },
+        move: function () {
+          console.info('move');
+        },
+        end: function () {
+          console.info('end');
+        },
         onRefresh: function () {
+          // after refresh do something you want
           setTimeout(() => {            
             this.backTop();
           }, 2000);
