@@ -18,6 +18,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        margin: 0;
       }
       .msgwrap {
         color: #ccc;
@@ -44,7 +45,7 @@
   </head>
   <body>
     <div class="msgwrap"></div>
-    <div class="contentwrap">
+    <div class="contentwrap js-content">
       <ul class="js-ul">
         <li>我是内容1</li>
         <li>我是内容2</li>
@@ -101,13 +102,13 @@
                              </li>`;
             }          
             
-          }, 2000);
+          }, 1000);
         }
       });
       
-      var load = new More ('.contentwrap', {
+      var load = new More ('.js-content', {
         more: function () {
-          main: '.contentwrap'
+          main: '.js-content'
           console.info('load more');
         }
       });
