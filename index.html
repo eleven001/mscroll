@@ -41,6 +41,36 @@
         text-align: left;
         margin-left: 40%;
       }
+      .contentwrap .loading {
+        display: none;
+        text-align: center;
+        position: relative;
+      }
+      .contentwrap .loading::after {
+        content: '加载中....';
+        margin-left: 20px;
+      }
+      .contentwrap .ui-page-loading-circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border-color: transparent;
+        position: absolute;
+        left: 35%;
+        top: 20%;
+        -webkit-animation: loading 690ms infinite linear;
+        animation: loading 690ms infinite linear;
+        -webkit-box-shadow: 1px 0 0 rgba(0,0,0,0.4);
+        box-shadow: 1px 0 0 rgba(0,0,0,0.4);
+      }
+      @keyframes loading {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>  
   </head>
   <body>
@@ -68,7 +98,31 @@
         <li>我是内容3</li>      
         <li>我是内容7</li>
         <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+        <li>我是内容6</li>
+        <li>我是内容7</li>
+        <li>我是内容8</li>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>      
+        <li>我是内容7</li>
+        <li>我是内容8</li>
       </ul>
+      <div class="loading js-loading">
+        <div class="ui-page-loading-circle"></div>
+      </div>
     </div>
     <script type="text/javascript" src="./bundle.js"></script>
 
@@ -80,13 +134,13 @@
         msgs: ['下拉刷新.....', '释放刷新'],
         distance: 10,
         start: function () {
-          console.info('start');
+          //console.info('start');
         },
         move: function () {
-          console.info('move');
+          //console.info('move');
         },
         end: function () {
-          console.info('end');
+          //console.info('end');
         },
         onRefresh: function () {
           let ul = document.querySelector('.js-ul');                    
@@ -100,19 +154,31 @@
               ul.innerHTML +=`<li>
                               我是刷新后内容${random}
                              </li>`;
-            }          
-            
+            }
           }, 1000);
         }
       });
       
       var load = new More ('.js-content', {
+        main: '.js-content',        
         more: function () {
-          main: '.js-content'
-          console.info('load more');
+          loadMore();
         }
-      });
+      });      
       load.start();
+      function loadMore() {
+        // 请求接口
+        var $ = load.$();
+        var $loading = $('.js-loading');
+        $loading.show();
+        console.log('load more');        
+        setTimeout(() => {
+          if ($loading && $loading.length) {
+            $loading.hide();  
+          }
+          load.$el.one('load-bottom', loadMore);
+        }, 1000);
+      }
     </script>
   </body>
 </html>
