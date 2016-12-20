@@ -127,8 +127,8 @@
     <script type="text/javascript" src="./bundle.js"></script>
 
     <script type="text/javascript">    
-      var Pull = nScroll.pull;
-      var More = nScroll.more;
+      var Pull = mScroll.pull;
+      var More = mScroll.more;
       var refresh = new Pull ('body', {
         MsgElement: '.msgwrap',
         msgs: ['下拉刷新.....', '释放刷新'],
@@ -146,7 +146,7 @@
           let ul = document.querySelector('.js-ul');                    
           let random = 1; 
           // after refresh do something you want
-          setTimeout(() => {
+          setTimeout(() => {           
             this.backTop();
             ul.innerHTML = '';
             for (let i = 0; i< 20; i++) {

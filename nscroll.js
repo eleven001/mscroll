@@ -1,1 +1,0 @@
-window.nScroll = require('./index.js');

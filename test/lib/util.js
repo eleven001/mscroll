@@ -16,4 +16,7 @@ describe('util', function () {
       expect(_.isArray([1, 2])).to.be.true;
     })
   });
+  describe('#throttle', function () {
+    
+  });
 });

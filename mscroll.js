@@ -1,0 +1,1 @@
+window.mScroll = require('./index.js');
