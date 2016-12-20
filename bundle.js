@@ -92,6 +92,7 @@ var Pull = function () {
     this.enabled = true;
     this.canfresh = false;
     this.msgWrapStyle = children[0].style;
+
     this.contentWrapStyle = children[1].style;
     this.options = _util2.default.extend({
       start: _util2.default.noop,
@@ -118,7 +119,6 @@ var Pull = function () {
       this.startY = this.endY = point.pageY;
       this.contentWrapStyle[_util2.default.prefix.transition] = 'none';
       this.msgElement.html('');
-      this.msgWrapStyle.display = 'block';
       this.options.start.call(this, e);
     }
   }, {
@@ -129,12 +129,13 @@ var Pull = function () {
       }
 
       var point = e.touches ? e.touches[0] : e;
-      
       var isTop = this.el.scrollTop <= 0;
+      console.info(this.el.scrollTop);
       var totaldistance = this.options.distance * 2;
       this.endX = point.pageX;
       this.endY = point.pageY;
       if (isTop) {
+        this.msgWrapStyle.display = 'block';
         var diffY = this.endY - this.startY;
         var diffX = Math.max(0, this.endX - this.startX);
         diffY = Math.max(0, diffY);
