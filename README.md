@@ -1,7 +1,8 @@
 # mScroll -- pull down refresh and pull up load more. only use in Mobile devices
+
+[![NPM](https://nodei.co/npm/mscroll.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mscroll/)<br/>
 1. pull down update
 1. pull up load more
-[![NPM](https://nodei.co/npm/mscroll.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mscroll/)
 
 #use document
 ## install
