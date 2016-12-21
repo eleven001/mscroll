@@ -1,6 +1,6 @@
 {
   "name": "mscroll",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "mScroll pull down refresh, pull up load more.",
   "devDependencies": {
     "babel-cli": "^6.18.0",

@@ -1,4 +1,5 @@
 # mScroll -- pull down refresh and pull up load more. only use in Mobile devices
+[![NPM](https://nodei.co/npm/mscroll.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mscroll/)
 1. pull down update
 1. pull up load more
 
@@ -17,6 +18,10 @@
 1. browserify mscroll.js --deubg > bundle.js
 
 1. in browser use bundle.js
+```
+##dependency
+```
+zepto-modules
 ```
 ## API
 ###
@@ -52,4 +57,8 @@
           }, 1000);
         }
       });
+```
+.more
+```js
+
 ```
