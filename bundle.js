@@ -91,8 +91,8 @@ var Pull = function () {
     var children = this.$el.children();
     this.enabled = true;
     this.canfresh = false;
+    this.msgWrap = children.eq(0);
     this.msgWrapStyle = children[0].style;
-
     this.contentWrapStyle = children[1].style;
     this.options = _util2.default.extend({
       start: _util2.default.noop,
@@ -186,7 +186,7 @@ var Pull = function () {
     value: function backTop() {
       this.msgWrapStyle[_util2.default.prefix.transform] = 'translate3d(0, 0, 0)';
       this.contentWrapStyle[_util2.default.prefix.transform] = 'translate3d(0, 0, 0)';
-      this.msgElement.hide();
+      this.msgWrap.hide();
     }
   }]);
 

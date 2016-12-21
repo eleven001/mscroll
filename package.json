@@ -1,7 +1,7 @@
 {
-  "name": "nScroll",
-  "version": "1.0.0",
-  "description": "nScroll",
+  "name": "mscroll",
+  "version": "0.1.0",
+  "description": "mScroll pull down refresh, pull up load more.",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.20.0",

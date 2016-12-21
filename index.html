@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>mScroll</title>
     <meta name=description content="">
     <meta name=keywords content="">
     <meta charset="utf-8">
@@ -27,6 +27,9 @@
         -webkit-transform: translate3d(0, 0px, 0);
         transform: translate3d(0, 0px, 0); 
       }
+      .msgwrap .msgwrap-msg {
+        display: inline-block;
+      }
       .contentwrap {       
         overflow: auto;
         height: 100%;
@@ -40,7 +43,7 @@
       li {
         list-style: none;
         text-align: left;
-        margin-left: 40%;
+        margin-left: 35%;
       }
       .contentwrap .loading {
         display: none;
@@ -50,6 +53,26 @@
       .contentwrap .loading::after {
         content: '加载中....';
         margin-left: 20px;
+      }
+      .ai-pulldown-logo {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzQ2MkIzMjk1MkRBMTFFNjg0OTNFQkE1MDQyOEMwNEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzQ2MkIzMkE1MkRBMTFFNjg0OTNFQkE1MDQyOEMwNEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRTdFMTUxMjUyRDkxMUU2ODQ5M0VCQTUwNDI4QzA0QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNDYyQjMyODUyREExMUU2ODQ5M0VCQTUwNDI4QzA0QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmYTAsQAAAYHSURBVHja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) no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+      }
+      .ai-loading {
+        width: 30px;
+        height: 30px;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxMjA0OTJhNi03YmFhLTQ3YTctYTlmOC1iNjZmZDE0NjIzZWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkY3QjY3QUU1NTM0MTFFNkFDQjZCMzU4RkQzQjYzOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Njg3MjIxNTY1NTJGMTFFNkFDQjZCMzU4RkQzQjYzOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMjA0OTJhNi03YmFhLTQ3YTctYTlmOC1iNjZmZDE0NjIzZWQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTIwNDkyYTYtN2JhYS00N2E3LWE5ZjgtYjY2ZmQxNDYyM2Vk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) no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        animation: loading 500ms infinite linear;
+        -webkit-animation: loading 500ms infinite linear;
       }
       .contentwrap .ui-page-loading-circle {
         width: 12px;
@@ -76,7 +99,12 @@
   </head>
   <body>    
     <div class="contentwrap js-content">
-      <div class="msgwrap js-msgwrap"></div>
+      <div class="msgwrap">
+        <div class="ai-pulldown-logo">  
+          <div class="ai-loading"></div>
+        </div>
+        <div class="js-msgwrap msgwrap-msg"></div>
+      </div>
       <ul class="js-ul">
         <li>我是内容1</li>
         <li>我是内容2</li>
@@ -131,7 +159,7 @@
       var Pull = mScroll.pull;
       var More = mScroll.more;
       var refresh = new Pull ('.js-content', {
-        MsgElement: '.js-msgwrap',
+        msgElement: '.js-msgwrap',
         msgs: ['下拉刷新.....', '释放刷新'],
         distance: 10,
         start: function () {
@@ -150,7 +178,7 @@
           setTimeout(() => {           
             this.backTop();
             ul.innerHTML = '';
-            for (let i = 0; i< 20; i++) {
+            for (let i = 0; i< 25; i++) {
               random = (Math.random() * (20 - 1) + 1).toFixed(0);
               ul.innerHTML +=`<li>
                               我是刷新后内容${random}
