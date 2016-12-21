@@ -7,7 +7,7 @@
 #use document
 ## install
 ```
-  npm install mScroll --save
+  npm install mscroll --save
 ```
 ## useage
 ```
