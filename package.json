@@ -1,6 +1,6 @@
 {
   "name": "mscroll",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "mScroll pull down refresh, pull up load more.",
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -10,6 +10,10 @@
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0"
   },
+  "keywords": [
+    "pull down refresh",
+    "pull up load more"
+  ],
   "author": {
     "name": "kangaoxiaoshi",
     "email": "kangaoxiaoshi@163.com"

@@ -5,6 +5,8 @@
 1. pull up load more
 
 #use document
+## online demo <font color=#ab1761  face="黑体">(only work in mobile devices)</font>
+  https://kangaoxiaoshi.github.io/mscroll/
 ## install
 ```
   npm install mscroll --save
