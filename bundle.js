@@ -21,6 +21,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var More = function () {
   function More(el, options) {
+    var _this = this;
+
     _classCallCheck(this, More);
 
     this.$el = _util2.default.isString(el) ? (0, _custom2.default)(el) : el;
@@ -29,24 +31,19 @@ var More = function () {
       main: 'body'
     }, options);
     this.$main = _util2.default.isString(this.options.main) ? (0, _custom2.default)(this.options.main) : this.options.main;
+
+    if (this.options.more) {
+      this.$el.one('load-bottom', this.options.more);
+    }
+
+    this.$main.off('scroll').on('scroll', _util2.default.throttle(function (e) {
+      if (_this.el && _this.el.getBoundingClientRect().bottom < document.body.clientHeight + 25) {
+        _this.$el.trigger('load-bottom');
+      }
+    }, 200));
   }
 
   _createClass(More, [{
-    key: 'start',
-    value: function start() {
-      var _this = this;
-
-      if (this.options.more) {
-        this.$el.one('load-bottom', this.options.more);
-      }
-
-      this.$main.off('scroll').on('scroll', _util2.default.throttle(function (e) {
-        if (_this.el && _this.el.getBoundingClientRect().bottom < document.body.clientHeight + 25) {
-          _this.$el.trigger('load-bottom');
-        }
-      }, 200));
-    }
-  }, {
     key: '$',
     value: function $() {
       return _custom2.default;
@@ -130,7 +127,6 @@ var Pull = function () {
 
       var point = e.touches ? e.touches[0] : e;
       var isTop = this.el.scrollTop <= 0;
-      console.info(this.el.scrollTop);
       var totaldistance = this.options.distance * 2;
       this.endX = point.pageX;
       this.endY = point.pageY;

@@ -194,7 +194,6 @@
           loadMore();
         }
       });      
-      load.start();
       function loadMore() {
         // 请求接口
         var $ = load.$();
@@ -212,7 +211,10 @@
                              </li>`;
             }
           }
-          load.$el.one('load-bottom', loadMore);
+          // 还能继续分页时，继续监听load-bottom 事件
+          if (true) {
+            load.$el.one('load-bottom', loadMore);  
+          }          
         }, 1000);
       }
     </script>
