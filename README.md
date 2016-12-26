@@ -55,7 +55,7 @@ zepto-modules
       }, 1000);
     }
   });
-
+```
   *  {msgElement} ``required``  selector or  document.element  where to place the refresh state message.
   *  {msgs}  default ['下拉刷新.....', '释放刷新'] when pulling  display msg.
   *  {distance} default 40px msgElement  height.
@@ -63,7 +63,7 @@ zepto-modules
   *  {move} ``function`` when  pulling fire this function.
   *  {end} ``function`` when  finish pull fire this function.
   *  {onRefresh} ``function`` after pull  do what you want in this function.
-```
+
 .more
 ```js
   var load = new More ('.js-content', {
@@ -73,6 +73,7 @@ zepto-modules
       console.log('load more');
     }
   });
+```
   *  {.js-content} ``required`` part of ``main`` this.el is $('.js-content').
     ```js
       this.$main.off('scroll').on('scroll', _.throttle((e) => {
@@ -83,4 +84,4 @@ zepto-modules
     ```
   *  {main} ``required`` selector or  document.element  which to add scroll.
 
-```
+
