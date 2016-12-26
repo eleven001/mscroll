@@ -75,13 +75,13 @@ zepto-modules
   });
 ```
   *  {.js-content} ``required`` part of ``main`` this.el is $('.js-content').
-    ```js
-      this.$main.off('scroll').on('scroll', _.throttle((e) => {
-        if (this.el && this.el.getBoundingClientRect().bottom < document.body.clientHeight + 25) {        
-          this.$el.trigger('load-bottom');        
-        }
-      }, 200));
-    ```
+```js
+  this.$main.off('scroll').on('scroll', _.throttle((e) => {
+    if (this.el && this.el.getBoundingClientRect().bottom < document.body.clientHeight + 25) {        
+      this.$el.trigger('load-bottom');        
+    }
+  }, 200));
+```
   *  {main} ``required`` selector or  document.element  which to add scroll.
 
 
