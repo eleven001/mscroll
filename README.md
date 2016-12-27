@@ -68,6 +68,7 @@ zepto-modules
 
 .more
 ```js
+  var More = mScroll.more;
   var load = new More ('.js-content', {
     main: '.js-content',        
     more: function () {
