@@ -131,7 +131,6 @@ var Pull = function () {
       this.endX = point.pageX;
       this.endY = point.pageY;
       if (isTop) {
-        this.msgWrapStyle.display = 'block';
         var diffY = this.endY - this.startY;
         var diffX = Math.max(0, this.endX - this.startX);
         diffY = Math.max(0, diffY);
@@ -145,7 +144,9 @@ var Pull = function () {
         if (diffY > this.options.distance * 1.5) {
           this.msgElement.html(this.options.msgs[1]);
           this.canfresh = true;
+          this.msgWrapStyle.display = 'block';
         } else if (diffY > 0) {
+          this.msgWrapStyle.display = 'block';
           this.msgElement.html(this.options.msgs[0]);
           this.canfresh = false;
         } else {
